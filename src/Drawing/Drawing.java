@@ -6,6 +6,7 @@
  */
 package Drawing;
 import java.io.*;
+import java.util.*;
 /**
  *
  * @author nicholas.gould
@@ -16,9 +17,13 @@ public class Drawing {
      
      static void getInput(){
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    try{br.readLine();
-        System.out.print("Invalid Command");}
+    try{StringTokenizer command = new StringTokenizer(br.readLine());
+    if (command.countTokens() == 2) {
+       System.out.print("valid!");}
+       else 
+      System.out.print("Invalid Command");
+    }
     catch(Exception e){}
-   
     
+       
 }}

@@ -12,6 +12,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.*;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.*;
 
 /**
  *
@@ -60,6 +62,17 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in = new ByteArrayInputStream("Invalid Command".getBytes());
         System.setIn(in);
         assertEquals("Invalid Command", outContent.toString());
+        
+    }
+    //test a valid command
+    @Test
+    public void testValidCommandInput() {
+        
+        Drawing.getInput();
+        //write command "This is an invalid command" to stdin
+        ByteArrayInputStream in = new ByteArrayInputStream("C 2 2".getBytes());
+        System.setIn(in);
+        assertThat(outContent.toString(), not(equalTo("Invalid Command")));
         
     }
     
