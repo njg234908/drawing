@@ -54,25 +54,25 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         assertEquals("enter command:", outContent.toString());
         
     }
-    @Test
-    public void testInvalidCommandInput() {
-        
-        Drawing.getInput();
-        //write command "This is an invalid command" to stdin
-        ByteArrayInputStream in = new ByteArrayInputStream("Invalid Command".getBytes());
-        System.setIn(in);
-        assertEquals("Invalid Command", outContent.toString());
-        
-    }
+    
     //test a valid command
     @Test
     public void testValidCommandInput() {
-        
-        Drawing.getInput();
         //write command "This is an invalid command" to stdin
         ByteArrayInputStream in = new ByteArrayInputStream("C 2 2".getBytes());
         System.setIn(in);
+        Drawing.getInput();
         assertThat(outContent.toString(), not(equalTo("Invalid Command")));
+        
+    }
+    
+    @Test
+    public void testInvalidCommandInput() {
+        //write command "This is an invalid command" to stdin
+        ByteArrayInputStream in = new ByteArrayInputStream(((String)"Invalid Command").getBytes());
+        System.setIn(in);
+        Drawing.getInput();
+        assertEquals("Invalid Command", outContent.toString());
         
     }
     
