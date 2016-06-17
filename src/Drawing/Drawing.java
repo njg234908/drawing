@@ -13,43 +13,56 @@ import java.util.*;
  */
 public class Drawing {
     
+    public static void main (String args[]){
+        MyDrawing mydrawing = new MyDrawing();
+    while (true){
+        mydrawing.prompt();
+    mydrawing.getInput();}
+    }
+}
+class MyDrawing{
     //prompt the user for a command
-    static void prompt(){
+    void prompt(){
     System.out.print("enter command:");}
     
     //get input from the user
-    static void getInput(){
+    void getInput(){  
     //get console input    
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
 // tokenize input
-    try{String inputtext = br.readLine();
+    try{
+        String inputtext = br.readLine();
     String[] splitinput = inputtext.split("\\s");
     Scanner command = new Scanner(inputtext);
     
    
-    //draw a basic canvas 
+    //exit on q 
+    if(inputtext.equals("q"))
+        System.exit(0);
+    else
     if(command.next().equals("c") && splitinput.length == 3){
-    List<String> canvas = buildCanvas(splitinput,command);
+    List<String> canvas = this.buildCanvas(splitinput,command);
        for (int x=0; x<canvas.size(); x++)
          System.out.println(canvas.get(x));}
     
     //is input the right length?
-       else if(splitinput.length==3){
+    else if(splitinput.length==3){
            System.out.print("Valid!");}
        else{
-      System.out.print("Invalid Command");}
+      System.out.println("Invalid Command");}
+      
     }
     catch(Exception e){
-    System.out.print("Exception getting input");
+    System.out.println("Invalid Command");
     }
     }
     
-    static List<String> buildCanvas(String[] splitinput, Scanner command){
+    List<String> buildCanvas(String[] splitinput, Scanner command){
     List<String> canvas = new ArrayList<>();
         int w = Integer.parseInt(splitinput[1]);
         int h = Integer.parseInt(splitinput[2]);
-        String top = new String();
+        String top = new String(" ");
         String side = new String("|");
         for(int i = 0; i < w ;i++){
             top = top+"-";

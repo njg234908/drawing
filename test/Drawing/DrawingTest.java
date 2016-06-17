@@ -49,8 +49,8 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
     @Test
     public void testPromptText() {
-        
-        Drawing.prompt();
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.prompt();
         assertEquals("enter command:", outContent.toString());
         
     }
@@ -61,8 +61,9 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         //write command "This is an invalid command" to stdin
         ByteArrayInputStream in = new ByteArrayInputStream("C 2 2".getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertThat(outContent.toString(), not(equalTo("Invalid Command")));
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertThat(outContent.toString(), not(equalTo("Invalid Command\n")));
         
     }
     
@@ -71,48 +72,65 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         //write command "This is an invalid command" to stdin
         ByteArrayInputStream in = new ByteArrayInputStream(((String)"Invalid").getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertEquals("Invalid Command", outContent.toString());
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals("Invalid Command\n", outContent.toString());
         
     }
+    
+    
     
     @Test
     public void drawBasicCanvas(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 1 1".getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertEquals("-\n| |\n-\n", outContent.toString() );
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals(" -\n| |\n -\n", outContent.toString() );
     }
     
     @Test
     public void drawAnotherCanvas(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 2 2".getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertEquals("--\n|  |\n|  |\n--\n", outContent.toString() );
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals(" --\n|  |\n|  |\n --\n", outContent.toString() );
     }
     
    @Test
     public void drawrectangularCanvas(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 4 2".getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertEquals("----\n|    |\n|    |\n----\n", outContent.toString() );
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals(" ----\n|    |\n|    |\n ----\n", outContent.toString() );
     }
     
     @Test
     public void drawHorizRectangularCanvas(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 4 2".getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertEquals("----\n|    |\n|    |\n----\n", outContent.toString() );
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals(" ----\n|    |\n|    |\n ----\n", outContent.toString() );
     }
     
     @Test
     public void drawVertRectangularCanvas(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 2 4".getBytes());
         System.setIn(in);
-        Drawing.getInput();
-        assertEquals("--\n|  |\n|  |\n|  |\n|  |\n--\n", outContent.toString() );
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals(" --\n|  |\n|  |\n|  |\n|  |\n --\n", outContent.toString() );
     }
+    /*@Test
+    public void drawLine(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 10".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals(" --\n|  |\n|  |\n|  |\n|  |\n --\n", outContent.toString() );
+    }*/
+    
 }
