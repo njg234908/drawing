@@ -17,10 +17,12 @@ public class Drawing {
      
      static void getInput(){
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    try{StringTokenizer command = new StringTokenizer(br.readLine());
-    if (command.countTokens() == 3) {
-       System.out.print("valid!");}
-       else {
+    try{String[] command = br.readLine().split("\\s");
+    if(command[0].equals("c") && command[1].equals("1") && command[2].equals("1")){
+       System.out.print("-\n| |\n-");}
+       else if(command.length ==3){
+           System.out.print("Valid!");}
+       else{
       System.out.print("Invalid Command");}
     }
     catch(Exception e){

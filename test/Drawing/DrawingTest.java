@@ -69,11 +69,18 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     @Test
     public void testInvalidCommandInput() {
         //write command "This is an invalid command" to stdin
-        ByteArrayInputStream in = new ByteArrayInputStream(((String)"Invalid Command").getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream(((String)"Invalid").getBytes());
         System.setIn(in);
         Drawing.getInput();
         assertEquals("Invalid Command", outContent.toString());
         
     }
     
+    @Test
+    public void drawBasicCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 1 1".getBytes());
+        System.setIn(in);
+        Drawing.getInput();
+        assertEquals("-\n| |\n-", outContent.toString() );
+    }
 }
