@@ -81,6 +81,6 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in = new ByteArrayInputStream("c 1 1".getBytes());
         System.setIn(in);
         Drawing.getInput();
-        assertEquals("-\n| |\n-", outContent.toString() );
+        assertEquals("-\n| |\n-\n", outContent.toString() );
     }
 }
