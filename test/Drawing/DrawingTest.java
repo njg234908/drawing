@@ -92,4 +92,27 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         assertEquals("--\n|  |\n|  |\n--\n", outContent.toString() );
     }
     
+   @Test
+    public void drawrectangularCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 4 2".getBytes());
+        System.setIn(in);
+        Drawing.getInput();
+        assertEquals("----\n|    |\n|    |\n----\n", outContent.toString() );
+    }
+    
+    @Test
+    public void drawHorizRectangularCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 4 2".getBytes());
+        System.setIn(in);
+        Drawing.getInput();
+        assertEquals("----\n|    |\n|    |\n----\n", outContent.toString() );
+    }
+    
+    @Test
+    public void drawVertRectangularCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 2 4".getBytes());
+        System.setIn(in);
+        Drawing.getInput();
+        assertEquals("--\n|  |\n|  |\n|  |\n|  |\n--\n", outContent.toString() );
+    }
 }
