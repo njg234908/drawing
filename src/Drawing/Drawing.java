@@ -12,8 +12,6 @@ import java.util.*;
  * @author nicholas.gould
  */
 public class Drawing {
-    //An Arraylist to hold the drawing
-    private static List<String> canvas = new ArrayList<>();
     
     //prompt the user for a command
     static void prompt(){
@@ -25,18 +23,32 @@ public class Drawing {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
 // tokenize input
-    try{String[] command = br.readLine().split("\\s");
+    try{String inputtext = br.readLine();
+    String[] splitinput = inputtext.split("\\s");
+    Scanner command = new Scanner(inputtext);
     
     //draw a basic canvas 
-    if(command[0].equals("c") && command[1].equals("1") && command[2].equals("1")){
-        canvas.add("-");
-        canvas.add("| |");
-        canvas.add("-");
+    if(command.next().equals("c") && splitinput.length == 3){
+        List<String> canvas = new ArrayList<>();
+        int w = Integer.parseInt(splitinput[1]);
+        int h = Integer.parseInt(splitinput[2]);
+        String top = new String();
+        String side = new String("|");
+        for(int i = 0; i < w ;i++){
+            top = top+"-";
+            side = side+" ";
+        }
+        side = side+"|";
+        canvas.add(top);
+        for(int i = 0; i < h ;i++){
+            canvas.add(side);
+        }
+        canvas.add(top);
        for (int x=0; x<canvas.size(); x++)
          System.out.println(canvas.get(x));}
     
     //is input the right length?
-       else if(command.length ==3){
+       else if(splitinput.length==3){
            System.out.print("Valid!");}
        else{
       System.out.print("Invalid Command");}

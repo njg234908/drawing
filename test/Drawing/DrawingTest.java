@@ -83,4 +83,13 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         Drawing.getInput();
         assertEquals("-\n| |\n-\n", outContent.toString() );
     }
+    
+    @Test
+    public void drawAnotherCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 2 2".getBytes());
+        System.setIn(in);
+        Drawing.getInput();
+        assertEquals("--\n|  |\n|  |\n--\n", outContent.toString() );
+    }
+    
 }
