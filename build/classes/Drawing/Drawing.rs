@@ -1,2 +1,0 @@
-Drawing.Drawing
-Drawing.MyDrawing

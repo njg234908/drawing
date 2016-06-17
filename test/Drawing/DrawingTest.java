@@ -124,13 +124,16 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         mydrawing.getInput();
         assertEquals(" --\n|  |\n|  |\n|  |\n|  |\n --\n", outContent.toString() );
     }
-    /*@Test
+    @Test
     public void drawLine(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 10".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        assertEquals(" --\n|  |\n|  |\n|  |\n|  |\n --\n", outContent.toString() );
-    }*/
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 6 2".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|xxxxxx    |\n|          |\n ----------\n", outContent.toString() );
+    }
     
 }
