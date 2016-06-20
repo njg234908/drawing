@@ -227,4 +227,21 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         
     
     }
+    
+    @Test
+    public void fillMultipleLines(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 4".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("R 1 1 8 4".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        ByteArrayInputStream in3 = new ByteArrayInputStream("B 2 2 b".getBytes());
+        System.setIn(in3);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|xxxxxxxx  |\n|x      x  |\n|x      x  |\n|xxxxxxxx  |\n ----------\n ----------\n|xxxxxxxx  |\n|xbbbbbbx  |\n|xbbbbbbx  |\n|xxxxxxxx  |\n ----------\n", outContent.toString() );
+        
+    
+    }
 }
