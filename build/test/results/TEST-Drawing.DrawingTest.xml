@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="eulonml09181.global.root" name="Drawing.DrawingTest" skipped="0" tests="10" time="0.064" timestamp="2016-06-20T10:40:14">
+<testsuite errors="0" failures="0" hostname="eulonml09181.global.root" name="Drawing.DrawingTest" skipped="0" tests="10" time="0.07" timestamp="2016-06-20T10:57:11">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -58,7 +58,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Drawing.DrawingTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/nicholas.gould/NetBeansProjects/Drawing/build/test/results/TEST-Drawing.DrawingTest.xml crashfile=/Users/nicholas.gould/NetBeansProjects/Drawing/build/junitvmwatcher8412749508443930705.properties propsfile=/Users/nicholas.gould/NetBeansProjects/Drawing/build/junit6403560686960718829.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Drawing.DrawingTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/nicholas.gould/NetBeansProjects/Drawing/build/test/results/TEST-Drawing.DrawingTest.xml crashfile=/Users/nicholas.gould/NetBeansProjects/Drawing/build/junitvmwatcher471742067874728014.properties propsfile=/Users/nicholas.gould/NetBeansProjects/Drawing/build/junit7930479319719783528.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -400,15 +400,15 @@
     <property name="libs.javaee-web-api-7.0.javadoc" value="/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
   <testcase classname="Drawing.DrawingTest" name="drawrectangularCanvas" time="0.004" />
-  <testcase classname="Drawing.DrawingTest" name="drawVerticalLine" time="0.0" />
-  <testcase classname="Drawing.DrawingTest" name="drawBasicCanvas" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="drawVerticalLine" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="drawBasicCanvas" time="0.0" />
   <testcase classname="Drawing.DrawingTest" name="drawVertRectangularCanvas" time="0.0" />
   <testcase classname="Drawing.DrawingTest" name="testPromptText" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="drawHorizRectangularCanvas" time="0.0" />
   <testcase classname="Drawing.DrawingTest" name="testInvalidCommandInput" time="0.0" />
-  <testcase classname="Drawing.DrawingTest" name="testValidCommandInput" time="0.002" />
+  <testcase classname="Drawing.DrawingTest" name="testValidCommandInput" time="0.003" />
   <testcase classname="Drawing.DrawingTest" name="drawAnotherCanvas" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawHorizontalLine" time="0.0" />
+  <testcase classname="Drawing.DrawingTest" name="drawHorizontalLine" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

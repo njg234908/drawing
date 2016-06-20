@@ -46,8 +46,7 @@ class MyDrawing{
     else
     if(splitinput[0].equals("c") && splitinput.length == 3){
        canvas = this.buildCanvas(splitinput,command);
-       for (int x=0; x<canvas.size(); x++)
-         System.out.println(canvas.get(x));}
+       this.printCanvas();}
     
     else if(splitinput[0].equals("l") && splitinput.length == 5){
     try{ int x1 = Integer.parseInt(splitinput[1]);
@@ -66,8 +65,7 @@ class MyDrawing{
          line=line+"|";
          for(int i=y1;i<=y2;i++)
             canvas.set(i, line);
-         for (int x=0; x<canvas.size(); x++)
-         System.out.println(canvas.get(x));   }
+         this.printCanvas();  }
          
          
          //horizontal line
@@ -82,8 +80,7 @@ class MyDrawing{
              line= line+" ";
          line=line+"|";
          canvas.set(y1, line);
-         for (int x=0; x<canvas.size(); x++)
-         System.out.println(canvas.get(x));    
+         this.printCanvas();   
              
          }
     }
@@ -122,6 +119,9 @@ class MyDrawing{
         canvas.add(top);
         return canvas;
     }
+    void printCanvas(){
+      for (int x=0; x<canvas.size(); x++)
+         System.out.println(canvas.get(x));}
     
        
 }
