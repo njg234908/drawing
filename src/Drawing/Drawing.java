@@ -55,7 +55,21 @@ class MyDrawing{
          int x2 = Integer.parseInt(splitinput[3]);
          int y2 = Integer.parseInt(splitinput[4]);
          //vertical line
-         if(x1==x2){}
+         if(x1==x2){
+         String line ="|";
+         int height = (y2-y1);
+         for(int i=1;i<x1;i++)
+             line = line+" ";
+         line = line+"*";
+         for(int i=x1;i<w;i++)
+             line= line+" ";
+         line=line+"|";
+         for(int i=y1;i<=y2;i++)
+            canvas.set(i, line);
+         for (int x=0; x<canvas.size(); x++)
+         System.out.println(canvas.get(x));   }
+         
+         
          //horizontal line
          else if(y1==y2){
          String line ="|";
