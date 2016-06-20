@@ -133,7 +133,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 6 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|******    |\n|          |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|xxxxxx    |\n|          |\n ----------\n", outContent.toString() );
         
     
     }
@@ -147,7 +147,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in2 = new ByteArrayInputStream("l 2 1 2 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n", outContent.toString() );
         
     }
     @Test
@@ -162,7 +162,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in3 = new ByteArrayInputStream("l 4 2 8 2".getBytes());
         System.setIn(in3);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|******    |\n|          |\n ----------\n ----------\n|          |\n|********  |\n|          |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|xxxxxx    |\n|          |\n ----------\n ----------\n|          |\n|xxxxxxxx  |\n|          |\n ----------\n", outContent.toString() );
     
     }
     
@@ -178,7 +178,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in3 = new ByteArrayInputStream("l 2 2 2 3".getBytes());
         System.setIn(in3);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n| *        |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n| x        |\n ----------\n", outContent.toString() );
         
     }
 }

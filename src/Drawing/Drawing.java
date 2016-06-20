@@ -63,7 +63,7 @@ class MyDrawing{
          
          for(int i=y1;i<=y2;i++){
             StringBuilder line = new StringBuilder(canvas.get(i));
-            line.setCharAt(x1, '*');
+            line.setCharAt(x1, 'x');
             canvas.set(i, line.toString());
          }   
          this.printCanvas();  }        
@@ -72,7 +72,7 @@ class MyDrawing{
          else if(y1==y2){
          StringBuilder line = new StringBuilder(canvas.get(y1));
          for(int i=x1;i<=x2;i++)
-            line.setCharAt(i, '*');
+            line.setCharAt(i, 'x');
          canvas.set(y1, line.toString());
          this.printCanvas();   
              
