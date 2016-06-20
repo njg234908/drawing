@@ -96,6 +96,7 @@ class MyDrawing{
          
          //check point is not already part of a line
          if(line.charAt(x1)!= 'x'){
+             //fill current line
              int i = x1;
              while(line.charAt(i)!='x'&& i<w){
                  line.setCharAt(i, colour);
@@ -106,7 +107,14 @@ class MyDrawing{
                  i--;
              }
          canvas.set(y1, line.toString());  
+         //fill lines above
+         //int i=y1;
+         
+         //while(i<h && ){
+         //}
+         //fill lines below
          }
+         
        this.printCanvas();
     }catch (Exception e){
        System.out.println("Invalid Command");}
