@@ -7,6 +7,7 @@
 package Drawing;
 import java.io.*;
 import java.util.*;
+import java.lang.*;
 /**
  *
  * @author nicholas.gould
@@ -73,16 +74,11 @@ class MyDrawing{
          
          //horizontal line
          else if(y1==y2){
-         String line ="|";
+         StringBuilder line = new StringBuilder(canvas.get(y1));
          int length = (x2-x1);
-         for(int i=1;i<x1;i++)
-             line = line+" ";
-         for(int i=0;i<=length;i++)
-             line= line+"*";
-         for(int i=x2;i<w;i++)
-             line= line+" ";
-         line=line+"|";
-         canvas.set(y1, line);
+         for(int i=x1;i<=x2;i++)
+            line.setCharAt(i, '*');
+         canvas.set(y1, line.toString());
          this.printCanvas();   
              
          }
