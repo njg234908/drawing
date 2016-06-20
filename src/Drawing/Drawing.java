@@ -85,6 +85,35 @@ class MyDrawing{
        System.out.println("Invalid Command");}
        
     }
+    
+    //Bucket Fill
+    else if(splitinput.length == 4 && splitinput[0].equals("B") && splitinput[3].length()==1 ){
+    try{ int x1 = Integer.parseInt(splitinput[1]);
+         int y1 = Integer.parseInt(splitinput[2]);
+         char colour = splitinput[3].charAt(0);
+         
+         StringBuilder line = new StringBuilder(canvas.get(y1));
+         
+         //check point is not already part of a line
+         if(line.charAt(x1)!= 'x'){
+             int i = x1;
+             while(line.charAt(i)!='x'&& i<w){
+                 line.setCharAt(i, colour);
+                 i++;
+             }
+             while(line.charAt(i)!='x'&& i>0){
+                 line.setCharAt(i, colour);
+                 i--;
+             }
+         canvas.set(y1, line.toString());  
+         }
+       this.printCanvas();
+    }catch (Exception e){
+       System.out.println("Invalid Command");}
+         
+         
+    
+    }
    
     
        else{
