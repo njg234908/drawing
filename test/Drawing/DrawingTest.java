@@ -181,4 +181,18 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n| x        |\n ----------\n", outContent.toString() );
         
     }
+    @Test
+    public void drawRectangle(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("R 1 1 3 3".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|xxx       |\n|x x       |\n|xxx       |\n ----------\n", outContent.toString() );
+        
+    
+    }
+    
 }
