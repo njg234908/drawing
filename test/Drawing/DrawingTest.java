@@ -59,7 +59,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     @Test
     public void testValidCommandInput() {
         //write command "This is an invalid command" to stdin
-        ByteArrayInputStream in = new ByteArrayInputStream("C 2 2".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("c 2 2".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -134,6 +134,8 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|******    |\n|          |\n ----------\n", outContent.toString() );
+        
+    
     }
     
     @Test
@@ -146,5 +148,23 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n", outContent.toString() );
+    
     }
+    @Test
+    public void drawOverlappingHorizontalLines(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 6 2".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        ByteArrayInputStream in3 = new ByteArrayInputStream("l 4 2 8 2".getBytes());
+        System.setIn(in3);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|******    |\n|          |\n ----------\n ----------\n|          |\n|********  |\n|          |\n ----------\n", outContent.toString() );
+    
+    }
+    
 }

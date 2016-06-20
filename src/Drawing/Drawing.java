@@ -44,15 +44,19 @@ class MyDrawing{
     if(inputtext.equals("q"))
         System.exit(0);
     else
+    
+    //valid build canvas command
     if(splitinput[0].equals("c") && splitinput.length == 3){
        canvas = this.buildCanvas(splitinput,command);
        this.printCanvas();}
     
+    //valid draw line command
     else if(splitinput[0].equals("l") && splitinput.length == 5){
     try{ int x1 = Integer.parseInt(splitinput[1]);
          int y1 = Integer.parseInt(splitinput[2]);
          int x2 = Integer.parseInt(splitinput[3]);
          int y2 = Integer.parseInt(splitinput[4]);
+         
          //vertical line
          if(x1==x2){
          String line ="|";
@@ -65,8 +69,7 @@ class MyDrawing{
          line=line+"|";
          for(int i=y1;i<=y2;i++)
             canvas.set(i, line);
-         this.printCanvas();  }
-         
+         this.printCanvas();  }        
          
          //horizontal line
          else if(y1==y2){
@@ -89,9 +92,6 @@ class MyDrawing{
        
     }
     
-    //is input the right length?
-    else if(splitinput.length==3){
-           System.out.print("Valid!");}
        else{
       System.out.println("Invalid Command");}
       
