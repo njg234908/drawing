@@ -148,8 +148,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n", outContent.toString() );
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n", outContent.toString() );
-    
+        
     }
     @Test
     public void drawOverlappingHorizontalLines(){
@@ -167,4 +166,19 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     }
     
+    @Test
+    public void drawOverlappingVerticalLines(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l 2 1 2 2".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        ByteArrayInputStream in3 = new ByteArrayInputStream("l 2 2 2 3".getBytes());
+        System.setIn(in3);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| *        |\n| *        |\n|          |\n ----------\n ----------\n ----------\n| *        |\n| *        |\n| *        |\n ----------\n", outContent.toString() );
+        
+    }
 }
