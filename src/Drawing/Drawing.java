@@ -52,36 +52,40 @@ class MyDrawing{
        this.printCanvas();}
     
     //valid draw line command
-    else if(splitinput[0].equals("l") && splitinput.length == 5){
+    else if(splitinput.length == 5){
     try{ int x1 = Integer.parseInt(splitinput[1]);
          int y1 = Integer.parseInt(splitinput[2]);
          int x2 = Integer.parseInt(splitinput[3]);
          int y2 = Integer.parseInt(splitinput[4]);
          
+         if (splitinput[0].equals("l")){
          //vertical line
          if(x1==x2){
-         
-         for(int i=y1;i<=y2;i++){
-            StringBuilder line = new StringBuilder(canvas.get(i));
-            line.setCharAt(x1, 'x');
-            canvas.set(i, line.toString());
-         }   
-         this.printCanvas();  }        
+         drawVerticalLine(x1,y1, x2, y2);
+         this.printCanvas();
+         }      
          
          //horizontal line
          else if(y1==y2){
-         StringBuilder line = new StringBuilder(canvas.get(y1));
-         for(int i=x1;i<=x2;i++)
-            line.setCharAt(i, 'x');
-         canvas.set(y1, line.toString());
-         this.printCanvas();   
-             
+             drawHorizontalLine(x1,y1, x2, y2);
+             this.printCanvas();
          }
+    }
+        //rectangle
+        else if((splitinput[0].equals("R"))){
+          drawHorizontalLine(x1,y1,x2,y1);
+          drawHorizontalLine(x1,y2,x2,y2);
+          drawVerticalLine(x1,y1,x1,y2);
+          drawVerticalLine(x2,y1,x2,y2);
+          this.printCanvas();
+          
+       }
     }
     catch (Exception e){
        System.out.println("Invalid Command");}
        
     }
+   
     
        else{
       System.out.println("Invalid Command");}
@@ -90,6 +94,7 @@ class MyDrawing{
     catch(Exception e){
     System.out.println("Invalid Command");
     }
+    
     }
     
     List<String> buildCanvas(String[] splitinput, Scanner command){
@@ -113,6 +118,22 @@ class MyDrawing{
     void printCanvas(){
       for (int x=0; x<canvas.size(); x++)
          System.out.println(canvas.get(x));}
+    
+    void drawVerticalLine(int x1,int y1, int x2, int y2){
+        for(int i=y1;i<=y2;i++){
+            StringBuilder line = new StringBuilder(canvas.get(i));
+            line.setCharAt(x1, 'x');
+            canvas.set(i, line.toString());
+         }   
+           } 
+    
+    void drawHorizontalLine(int x1,int y1, int x2, int y2){
+       StringBuilder line = new StringBuilder(canvas.get(y1));
+         for(int i=x1;i<=x2;i++)
+            line.setCharAt(i, 'x');
+         canvas.set(y1, line.toString());  
+             
+         }
     
        
 }
