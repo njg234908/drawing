@@ -60,22 +60,17 @@ class MyDrawing{
          
          //vertical line
          if(x1==x2){
-         String line ="|";
-         int height = (y2-y1);
-         for(int i=1;i<x1;i++)
-             line = line+" ";
-         line = line+"*";
-         for(int i=x1;i<w;i++)
-             line= line+" ";
-         line=line+"|";
-         for(int i=y1;i<=y2;i++)
-            canvas.set(i, line);
+         
+         for(int i=y1;i<=y2;i++){
+            StringBuilder line = new StringBuilder(canvas.get(i));
+            line.setCharAt(x1, '*');
+            canvas.set(i, line.toString());
+         }   
          this.printCanvas();  }        
          
          //horizontal line
          else if(y1==y2){
          StringBuilder line = new StringBuilder(canvas.get(y1));
-         int length = (x2-x1);
          for(int i=x1;i<=x2;i++)
             line.setCharAt(i, '*');
          canvas.set(y1, line.toString());
