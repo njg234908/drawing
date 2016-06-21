@@ -108,10 +108,22 @@ class MyDrawing{
              }
          canvas.set(y1, line.toString());  
          //fill lines above
-         //int i=y1;
-         
-         //while(i<h && ){
-         //}
+         for(int a=y1+1;a<h;a++){
+             StringBuilder currentLine = new StringBuilder(canvas.get(a));
+             
+             if(currentLine.charAt(x1)!= 'x'){
+             //fill current line
+             int j = x1;
+             while(line.charAt(j)!='x'&& j<w){
+                 currentLine.setCharAt(j, colour);
+                 j++;
+             }
+             while(line.charAt(j)!='x'&& i>0){
+                 line.setCharAt(i, colour);
+                 j--;
+             }
+         canvas.set(a, currentLine.toString());  
+         }
          //fill lines below
          }
          
