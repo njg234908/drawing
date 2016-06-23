@@ -240,7 +240,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in3 = new ByteArrayInputStream("B 2 2 b".getBytes());
         System.setIn(in3);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|xxxxxxxx  |\n|x      x  |\n|x      x  |\n|xxxxxxxx  |\n ----------\n ----------\n|xxxxxxxx  |\n|xbbbbbbx  |\n|xbbbbbbx  |\n|xxxxxxxx  |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n|          |\n ----------\n ----------\n|xxxxxxxx  |\n|x      x  |\n|x      x  |\n|xxxxxxxx  |\n ----------\n ----------\n|xxxxxxxx  |\n|xbbbbbbx  |\n|xbbbbbbx  |\n|xxxxxxxx  |\n ----------\n", outContent.toString() );
         
     
     }

@@ -108,7 +108,7 @@ class MyDrawing{
              }
          canvas.set(y1, line.toString());  
          //fill lines above
-         for(int a=y1+1;a<h;a++){
+         for(int a=y1+1;a<=h;a++){
              StringBuilder currentLine = new StringBuilder(canvas.get(a));
              
              if(currentLine.charAt(x1)!= 'x'){
@@ -125,6 +125,7 @@ class MyDrawing{
          canvas.set(a, currentLine.toString());  
          }
          //fill lines below
+         }
          }
          
        this.printCanvas();
