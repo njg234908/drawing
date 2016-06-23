@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="Macbooks-MacBook-Pro.local" name="Drawing.DrawingTest" skipped="0" tests="17" time="0.544" timestamp="2016-06-23T16:26:55">
+<testsuite errors="0" failures="1" hostname="Macbooks-MacBook-Pro.local" name="Drawing.DrawingTest" skipped="0" tests="18" time="0.497" timestamp="2016-06-23T17:11:38">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="nicandannette" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Drawing.DrawingTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/nicandannette/drawing/drawing/build/test/results/TEST-Drawing.DrawingTest.xml crashfile=/Users/nicandannette/drawing/drawing/build/junitvmwatcher3857887482804524796.properties propsfile=/Users/nicandannette/drawing/drawing/build/junit1304980149188289288.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Drawing.DrawingTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/nicandannette/drawing/drawing/build/test/results/TEST-Drawing.DrawingTest.xml crashfile=/Users/nicandannette/drawing/drawing/build/junitvmwatcher5647952510707401361.properties propsfile=/Users/nicandannette/drawing/drawing/build/junit4426750622848933126.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -307,48 +307,39 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
   </properties>
   <testcase classname="Drawing.DrawingTest" name="drawrectangularCanvas" time="0.007" />
-  <testcase classname="Drawing.DrawingTest" name="fillWholeCanvas" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="fillWholeCanvas" time="0.002" />
   <testcase classname="Drawing.DrawingTest" name="drawVerticalLine" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawBasicCanvas" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="fillRectangle" time="0.002" />
+  <testcase classname="Drawing.DrawingTest" name="drawBasicCanvas" time="0.0" />
+  <testcase classname="Drawing.DrawingTest" name="fillRectangle" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="drawVertRectangularCanvas" time="0.0" />
-  <testcase classname="Drawing.DrawingTest" name="fillMultipleLines" time="0.011">
-    <failure message="expected:&lt;...      |&#xa; ----------&#xa;[ ----------&#xa;|xxxxxxxx  |&#xa;|x      x  |&#xa;|x      x  |&#xa;|xxxxxxxx  |&#xa; ----------&#xa; ----------&#xa;|xxxxxxxx  |&#xa;|xbbbbbbx  |&#xa;|xbbbbbbx  |&#xa;|xxxxxxxx  ]|&#xa; ----------&#xa;&gt; but was:&lt;...      |&#xa; ----------&#xa;[Invalid Command&#xa; ----------&#xa;|bbbbbbbbbb|&#xa;|bbbbbbbbbb|&#xa;|bbbbbbbbbb|&#xa;|bbbbbbbbbb]|&#xa; ----------&#xa;&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;...      |
+  <testcase classname="Drawing.DrawingTest" name="fillMultipleLines" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="testPromptText" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="drawHorizRectangularCanvas" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="fillAroundVerticalLine" time="0.02">
+    <failure message="expected:&lt;...------&#xa; ----------&#xa;|[cccccccccc|&#xa;|ccccxccccc|&#xa;|ccccxccccc|&#xa;|cccccccccc]|&#xa; ----------&#xa;&gt; but was:&lt;...------&#xa; ----------&#xa;|[ x        |&#xa;| x        |&#xa;|          ]|&#xa; ----------&#xa;&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;...------
  ----------
-[ ----------
-|xxxxxxxx  |
-|x      x  |
-|x      x  |
-|xxxxxxxx  |
+|[cccccccccc|
+|ccccxccccc|
+|ccccxccccc|
+|cccccccccc]|
  ----------
+&gt; but was:&lt;...------
  ----------
-|xxxxxxxx  |
-|xbbbbbbx  |
-|xbbbbbbx  |
-|xxxxxxxx  ]|
- ----------
-&gt; but was:&lt;...      |
- ----------
-[Invalid Command
- ----------
-|bbbbbbbbbb|
-|bbbbbbbbbb|
-|bbbbbbbbbb|
-|bbbbbbbbbb]|
+|[ x        |
+| x        |
+|          ]|
  ----------
 &gt;
-	at Drawing.DrawingTest.fillMultipleLines(DrawingTest.java:243)
+	at Drawing.DrawingTest.fillAroundVerticalLine(DrawingTest.java:272)
 </failure>
   </testcase>
-  <testcase classname="Drawing.DrawingTest" name="testPromptText" time="0.0" />
-  <testcase classname="Drawing.DrawingTest" name="drawHorizRectangularCanvas" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="fillLongerRectangle" time="0.002" />
-  <testcase classname="Drawing.DrawingTest" name="drawOverlappingVerticalLines" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="fillLongerRectangle" time="0.003" />
+  <testcase classname="Drawing.DrawingTest" name="drawOverlappingVerticalLines" time="0.002" />
   <testcase classname="Drawing.DrawingTest" name="testInvalidCommandInput" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawRectangle" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="testValidCommandInput" time="0.007" />
-  <testcase classname="Drawing.DrawingTest" name="drawAnotherCanvas" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawHorizontalLine" time="0.003" />
+  <testcase classname="Drawing.DrawingTest" name="drawRectangle" time="0.0" />
+  <testcase classname="Drawing.DrawingTest" name="testValidCommandInput" time="0.005" />
+  <testcase classname="Drawing.DrawingTest" name="drawAnotherCanvas" time="0.002" />
+  <testcase classname="Drawing.DrawingTest" name="drawHorizontalLine" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="drawOverlappingHorizontalLines" time="0.002" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -234,7 +234,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("R 1  1 8 4".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("R 1 1 8 4".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
         ByteArrayInputStream in3 = new ByteArrayInputStream("B 3 3 b".getBytes());
@@ -257,4 +257,20 @@ public void fillWholeCanvas(){
         
     
     }
+@Test
+    public void fillAroundVerticalLine(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l 2 1 2 2".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        ByteArrayInputStream in3 = new ByteArrayInputStream("B 2 2 c".getBytes());
+        System.setIn(in3);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n ----------\n|cccccccccc|\n|ccccxccccc|\n|ccccxccccc|\n|cccccccccc|\n ----------\n", outContent.toString() );
+        
+    }
+
 }

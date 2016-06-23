@@ -191,15 +191,16 @@ class MyDrawing{
     void fillLine(int x1, int y1, StringBuilder line,char colour){
     //fill current line
              int i = x1;
-             while(line.charAt(i)!='x'&& i<w){
+             while(line.charAt(i)!='x'&& i<=w){
                  //System.out.println("i:"+i);
                  line.setCharAt(i, colour);
                  i++;
              }
-             while(line.charAt(i)!='x'&& i>0){
+             int j = x1;
+             while(line.charAt(j)!='x'&& j>0){
                  //System.out.println("i:"+i);
-                 line.setCharAt(i, colour);
-                 i--;
+                 line.setCharAt(j, colour);
+                 j--;
              }
          canvas.set(y1, line.toString());}
        
