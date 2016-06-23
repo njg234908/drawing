@@ -244,4 +244,17 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         
     
     }
+@Test
+public void fillWholeCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 4".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in3 = new ByteArrayInputStream("B 2 2 c".getBytes());
+        System.setIn(in3);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n|          |\n ----------\n ----------\n|cccccccccc|\n|cccccccccc|\n|cccccccccc|\n|cccccccccc|\n ----------\n", outContent.toString() );
+        
+    
+    }
 }

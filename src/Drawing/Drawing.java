@@ -96,35 +96,38 @@ class MyDrawing{
          
          //check point is not already part of a line
          if(line.charAt(x1)!= 'x'){
-             //fill current line
-             int i = x1;
-             while(line.charAt(i)!='x'&& i<w){
-                 line.setCharAt(i, colour);
-                 i++;
-             }
-             while(line.charAt(i)!='x'&& i>0){
-                 line.setCharAt(i, colour);
-                 i--;
-             }
-         canvas.set(y1, line.toString());  
+             this.fillLine(x1,y1,line,colour);
+               
          //fill lines above
          for(int a=y1+1;a<=h;a++){
              StringBuilder currentLine = new StringBuilder(canvas.get(a));
              
              if(currentLine.charAt(x1)!= 'x'){
              //fill current line
-             int j = x1;
-             while(line.charAt(j)!='x'&& j<w){
+             this.fillLine(x1, a, currentLine, colour);
+             /*int j = x1;
+             while(currentLine.charAt(j)!='x'&& j<w){
+                 //System.out.println("j:"+j);
                  currentLine.setCharAt(j, colour);
                  j++;
              }
-             while(line.charAt(j)!='x'&& i>0){
-                 line.setCharAt(i, colour);
+             while(currentLine.charAt(j)!='x'&& j>0){
+                 //System.out.println("j:"+j);
+                 currentLine.setCharAt(j, colour);
                  j--;
              }
          canvas.set(a, currentLine.toString());  
-         }
+         }*/
+             }}
          //fill lines below
+         for(int a=y1-1;a>0;a--){
+             StringBuilder currentLine = new StringBuilder(canvas.get(a));
+             
+             if(currentLine.charAt(x1)!= 'x'){
+             //fill current line
+             this.fillLine(x1, a, currentLine, colour);
+             }
+         
          }
          }
          
@@ -185,5 +188,19 @@ class MyDrawing{
              
          }
     
+    void fillLine(int x1, int y1, StringBuilder line,char colour){
+    //fill current line
+             int i = x1;
+             while(line.charAt(i)!='x'&& i<w){
+                 //System.out.println("i:"+i);
+                 line.setCharAt(i, colour);
+                 i++;
+             }
+             while(line.charAt(i)!='x'&& i>0){
+                 //System.out.println("i:"+i);
+                 line.setCharAt(i, colour);
+                 i--;
+             }
+         canvas.set(y1, line.toString());}
        
 }
