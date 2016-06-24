@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="Macbooks-MacBook-Pro.local" name="Drawing.DrawingTest" skipped="0" tests="18" time="0.15" timestamp="2016-06-24T11:43:35">
+<testsuite errors="0" failures="0" hostname="Macbooks-MacBook-Pro.local" name="Drawing.DrawingTest" skipped="0" tests="18" time="0.419" timestamp="2016-06-24T13:04:43">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="nicandannette" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Drawing.DrawingTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/nicandannette/drawing/drawing/build/test/results/TEST-Drawing.DrawingTest.xml crashfile=/Users/nicandannette/drawing/drawing/build/junitvmwatcher2572753774360675943.properties propsfile=/Users/nicandannette/drawing/drawing/build/junit6788519963147258155.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Drawing.DrawingTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/nicandannette/drawing/drawing/build/test/results/TEST-Drawing.DrawingTest.xml crashfile=/Users/nicandannette/drawing/drawing/build/junitvmwatcher1740572520019332772.properties propsfile=/Users/nicandannette/drawing/drawing/build/junit8845916710746745141.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -185,6 +185,7 @@
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/Drawing.jar" />
     <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="Drawing" />
     <property name="netbeans.hash.code" value="unique=NB_JAVA09d070187-564a-414d-af39-2bac837cdd98_83e2933b-a766-4626-a684-7cb03df48f4c" />
@@ -286,16 +287,16 @@
     <property name="libs.hamcrest.src" value="" />
     <property name="run.jvmargs" value="" />
     <property name="libs.hibernate4-persistence.classpath" value="/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/antlr-2.7.7.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/c3p0-0.9.2.1.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-c3p0-4.3.1.Final.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/mchange-commons-java-0.2.3.4.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/dom4j-1.6.1.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/ehcache-core-2.4.3.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-ehcache-4.3.1.Final.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-core-4.3.1.Final.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/jboss-logging-3.1.3.GA.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-commons-annotations-4.0.4.Final.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-entitymanager-4.3.1.Final.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/javassist-3.18.1-GA.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/slf4j-api-1.6.1.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/slf4j-simple-1.6.1.jar:/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
-    <property name="dist.archive.excludes" value="" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
+    <property name="dist.archive.excludes" value="" />
     <property name="ant.file.type.Drawing" value="file" />
     <property name="libs.testng.javadoc" value="/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/platform/docs/testng-6.8.1-javadoc.zip" />
     <property name="libs.PostgreSQLDriver.classpath" value="/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/ide/modules/ext/postgresql-9.2-1002.jdbc4.jar" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="/Applications/NetBeans/NetBeans 8.1.app/Contents/Resources/NetBeans/java/modules/ext/hibernate4/hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
     <property name="main.class" value="Drawing.Drawing" />
-    <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
+    <property name="libs.CopyLibs.src" value="" />
     <property name="ant.file.type.Drawing-impl" value="file" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.4 compiled on April 29 2014" />
     <property name="file.encoding" value="UTF-8" />
@@ -305,32 +306,21 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
   </properties>
-  <testcase classname="Drawing.DrawingTest" name="drawrectangularCanvas" time="0.008" />
+  <testcase classname="Drawing.DrawingTest" name="drawrectangularCanvas" time="0.01" />
   <testcase classname="Drawing.DrawingTest" name="drawBasicCanvas" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawInvalidCanvas" time="0.008">
-    <failure message="expected:&lt;[Invalid Command]&#xa;&gt; but was:&lt;[ &#xa;||&#xa;||&#xa;||&#xa;||&#xa; ]&#xa;&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;[Invalid Command]
-&gt; but was:&lt;[ 
-||
-||
-||
-||
- ]
-&gt;
-	at Drawing.DrawingTest.drawInvalidCanvas(DrawingTest.java:133)
-</failure>
-  </testcase>
-  <testcase classname="Drawing.DrawingTest" name="drawDiagonalLineAttempt" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="drawInvalidCanvas" time="0.0" />
+  <testcase classname="Drawing.DrawingTest" name="drawDiagonalLineAttempt" time="0.0" />
   <testcase classname="Drawing.DrawingTest" name="drawVertRectangularCanvas" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="testPromptText" time="0.0" />
   <testcase classname="Drawing.DrawingTest" name="drawHorizRectangularCanvas" time="0.0" />
   <testcase classname="Drawing.DrawingTest" name="drawOverlappingVerticalLines" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="drawRectanglInvalidCoords" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="testInvalidCommandInput" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawRectangle" time="0.002" />
-  <testcase classname="Drawing.DrawingTest" name="testValidCommandInput" time="0.005" />
-  <testcase classname="Drawing.DrawingTest" name="drawAnotherCanvas" time="0.0" />
+  <testcase classname="Drawing.DrawingTest" name="drawRectangle" time="0.001" />
+  <testcase classname="Drawing.DrawingTest" name="testValidCommandInput" time="0.007" />
+  <testcase classname="Drawing.DrawingTest" name="drawAnotherCanvas" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="drawRectangleOutsideCanvas" time="0.001" />
-  <testcase classname="Drawing.DrawingTest" name="drawHorizontalLine" time="0.0" />
+  <testcase classname="Drawing.DrawingTest" name="drawHorizontalLine" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="drawHorizontalLineOutsideCanvas" time="0.002" />
   <testcase classname="Drawing.DrawingTest" name="drawOverlappingHorizontalLines" time="0.001" />
   <testcase classname="Drawing.DrawingTest" name="negativeCoordsDrawLine" time="0.001" />

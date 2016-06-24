@@ -51,7 +51,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     public void testPromptText() {
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.prompt();
-        assertEquals("enter command:", outContent.toString());
+        assertEquals("Enter Command:", outContent.toString());
         
     }
     

@@ -27,7 +27,7 @@ class MyDrawing{
     
     //prompt the user for a command
     void prompt(){
-        System.out.print("enter command:");
+        System.out.print("Enter Command:");
     }
     
     //get input from the user
@@ -47,9 +47,22 @@ class MyDrawing{
         else
         //valid build canvas command
         if(splitinput[0].equals("C") && splitinput.length == 3){
-            canvas = this.buildCanvas(splitinput,command);
-            this.printCanvas();
-        }
+            try{
+                width=Integer.parseInt(splitinput[1]);
+                height =Integer.parseInt(splitinput[2]);
+                
+            //dimensions above minimum allowed    
+            if (width >0 && height >0){    
+                canvas = this.buildCanvas();
+                this.printCanvas();
+            }
+            else
+                this.invalidCommand();
+            }
+            catch (Exception e){
+                this.invalidCommand();
+            }
+            }
         //draw line command
         else if(splitinput.length == 5){
             try{ 
@@ -108,11 +121,9 @@ class MyDrawing{
     }
     
     //build a canvas to specified dimensions
-    List<String> buildCanvas(String[] splitinput, Scanner command){
+    List<String> buildCanvas(){
         List<String> canvasbuild;
         canvasbuild = new ArrayList<>();
-        width = Integer.parseInt(splitinput[1]);
-        height = Integer.parseInt(splitinput[2]);
         String top = " ";
         String side = "|";
         for(int i = 0; i < width ;i++){
