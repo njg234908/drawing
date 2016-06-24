@@ -134,9 +134,19 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|xxxxxx    |\n|          |\n ----------\n", outContent.toString() );
-        
-    
     }
+     @Test
+    public void drawHorizontalLineOutsideCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 11 2".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        assertEquals("Invalid Command\n", outContent.toString());
+    }
+    
     
     @Test
     public void drawVerticalLine(){
@@ -194,19 +204,22 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         
     
     }
+    
+    
+    /*
     @Test
     public void fillRectangle(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 4".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("R 1 1 3 3".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("R 2 2 4 4".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        ByteArrayInputStream in3 = new ByteArrayInputStream("B 2 2 b".getBytes());
+        ByteArrayInputStream in3 = new ByteArrayInputStream("B 3 3 b".getBytes());
         System.setIn(in3);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|xxx       |\n|x x       |\n|xxx       |\n ----------\n ----------\n|xxx       |\n|xbx       |\n|xxx       |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n| xxx      |\n| x x      |\n| xxx      |\n ----------\n ----------\n|          |\n| xxx      |\n| xbx      |\n| xxx      |\n ----------\n", outContent.toString() );
         
     
     }
@@ -257,6 +270,7 @@ public void fillWholeCanvas(){
         
     
     }
+
 @Test
     public void fillAroundVerticalLine(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
@@ -271,6 +285,6 @@ public void fillWholeCanvas(){
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n ----------\n|cccccccccc|\n|ccccxccccc|\n|ccccxccccc|\n|cccccccccc|\n ----------\n", outContent.toString() );
         
-    }
+    }*/
 
 }

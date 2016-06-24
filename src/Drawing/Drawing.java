@@ -96,7 +96,9 @@ class MyDrawing{
          
          //check point is not already part of a line
          if(line.charAt(x1)!= 'x'){
-             this.fillLine(x1,y1,line,colour);
+             this.fillHorizontalLine(x1,y1,line,colour);
+             //line = new StringBuilder (canvas.get(y1));
+             //this.fillVerticalLine(x1,y1,line,colour);
                
          //fill lines above
          for(int a=y1+1;a<=h;a++){
@@ -104,20 +106,8 @@ class MyDrawing{
              
              if(currentLine.charAt(x1)!= 'x'){
              //fill current line
-             this.fillLine(x1, a, currentLine, colour);
-             /*int j = x1;
-             while(currentLine.charAt(j)!='x'&& j<w){
-                 //System.out.println("j:"+j);
-                 currentLine.setCharAt(j, colour);
-                 j++;
-             }
-             while(currentLine.charAt(j)!='x'&& j>0){
-                 //System.out.println("j:"+j);
-                 currentLine.setCharAt(j, colour);
-                 j--;
-             }
-         canvas.set(a, currentLine.toString());  
-         }*/
+             this.fillHorizontalLine(x1, a, currentLine, colour);
+            
              }}
          //fill lines below
          for(int a=y1-1;a>0;a--){
@@ -125,10 +115,18 @@ class MyDrawing{
              
              if(currentLine.charAt(x1)!= 'x'){
              //fill current line
-             this.fillLine(x1, a, currentLine, colour);
+             this.fillHorizontalLine(x1, a, currentLine, colour);
              }
          
          }
+         //fill lines right
+         //for(int a=x1;a<=w;a++)
+         //    this.fillVerticalLine(a,y1,line,colour);     
+         
+         //fill lines left
+         //for(int a=x1-1;a>0;a--)
+         //    this.fillVerticalLine(a,y1,line,colour);     
+         
          }
          
        this.printCanvas();
@@ -188,7 +186,7 @@ class MyDrawing{
              
          }
     
-    void fillLine(int x1, int y1, StringBuilder line,char colour){
+    void fillHorizontalLine(int x1, int y1, StringBuilder line,char colour){
     //fill current line
              int i = x1;
              while(line.charAt(i)!='x'&& i<=w){
@@ -203,5 +201,21 @@ class MyDrawing{
                  j--;
              }
          canvas.set(y1, line.toString());}
-       
+    
+    void fillVerticalLine(int x1,int y1,StringBuilder line,char colour){
+        int i = y1;
+        while(line.charAt(x1)!='x' && i<h){
+            line.setCharAt(x1, colour);
+            canvas.set(i, line.toString());
+            i++;
+            line = new StringBuilder(canvas.get(i));        
+        }
+        int j = y1;
+        while(line.charAt(x1)!='x' && j>0){
+            line.setCharAt(x1, colour);
+            canvas.set(j, line.toString());
+            j--;
+            line = new StringBuilder(canvas.get(j));        
+        }
+    }
 }
