@@ -23,8 +23,8 @@ public class Drawing {
 }
 class MyDrawing{
     List<String> canvas;
-    int w;
-    int h;
+    int width;
+    int height;
     //prompt the user for a command
     void prompt(){
     System.out.print("enter command:");}
@@ -58,7 +58,7 @@ class MyDrawing{
          int x2 = Integer.parseInt(splitinput[3]);
          int y2 = Integer.parseInt(splitinput[4]);
          
-         if ((x1>0 && y1>0 && x2>0 && y2>0) && (x1 <=w && x2 <=w) && (y1 <=h && y2 <=h)){
+         if ((x1>0 && y1>0 && x2>0 && y2>0) && (x1 <=width && x2 <=width) && (y1 <=height && y2 <=height)){
              if(splitinput[0].equals("L")){
          //vertical line
          if(x1==x2){
@@ -71,7 +71,7 @@ class MyDrawing{
              drawHorizontalLine(x1,y1, x2, y2);
              this.printCanvas();
          }
-         else System.out.println("Invalid Command");
+         else this.invalidCommand();
     }
         //rectangle
         else if((splitinput[0].equals("R"))){
@@ -82,14 +82,14 @@ class MyDrawing{
           this.printCanvas();
           
        }
-        else System.out.println("Invalid Command");
-    }else System.out.println("Invalid Command");
+        else this.invalidCommand();
+    }else this.invalidCommand();
     }
     catch (Exception e){
-       System.out.println("Invalid Command");}
+       this.invalidCommand();}
        
     }
-    
+    /*
     //Bucket Fill
     else if(splitinput.length == 4 && splitinput[0].equals("B") && splitinput[3].length()==1 ){
     try{ int x1 = Integer.parseInt(splitinput[1]);
@@ -139,32 +139,36 @@ class MyDrawing{
          
          
     
-    }
+    }*/
    
     
        else{
-      System.out.println("Invalid Command");}
+      this.invalidCommand();}
       
     }
     catch(Exception e){
-    System.out.println("Invalid Command");
+    this.invalidCommand();
     }
     
+    }
+    
+    void invalidCommand(){
+        System.out.println("Invalid Command");
     }
     
     List<String> buildCanvas(String[] splitinput, Scanner command){
     List<String> canvas = new ArrayList<>();
-        w = Integer.parseInt(splitinput[1]);
-        h = Integer.parseInt(splitinput[2]);
+        width = Integer.parseInt(splitinput[1]);
+        height = Integer.parseInt(splitinput[2]);
         String top = new String(" ");
         String side = new String("|");
-        for(int i = 0; i < w ;i++){
+        for(int i = 0; i < width ;i++){
             top = top+"-";
             side = side+" ";
         }
         side = side+"|";
         canvas.add(top);
-        for(int i = 0; i < h ;i++){
+        for(int i = 0; i < height ;i++){
             canvas.add(side);
         }
         canvas.add(top);
@@ -193,7 +197,7 @@ class MyDrawing{
     void fillHorizontalLine(int x1, int y1, StringBuilder line,char colour){
     //fill current line
              int i = x1;
-             while(line.charAt(i)!='x'&& i<=w){
+             while(line.charAt(i)!='x'&& i<=width){
                  //System.out.println("i:"+i);
                  line.setCharAt(i, colour);
                  i++;
@@ -208,7 +212,7 @@ class MyDrawing{
     
     void fillVerticalLine(int x1,int y1,StringBuilder line,char colour){
         int i = y1;
-        while(line.charAt(x1)!='x' && i<h){
+        while(line.charAt(x1)!='x' && i<height){
             line.setCharAt(x1, colour);
             canvas.set(i, line.toString());
             i++;
