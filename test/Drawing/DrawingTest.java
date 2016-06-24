@@ -59,7 +59,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     @Test
     public void testValidCommandInput() {
         //write command "This is an invalid command" to stdin
-        ByteArrayInputStream in = new ByteArrayInputStream("c 2 2".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 2 2".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -82,7 +82,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawBasicCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 1 1".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 1 1".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -91,7 +91,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawAnotherCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 2 2".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 2 2".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -100,7 +100,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
    @Test
     public void drawrectangularCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 4 2".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 4 2".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -109,7 +109,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawHorizRectangularCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 4 2".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 4 2".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -118,7 +118,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawVertRectangularCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 2 4".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 2 4".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -126,22 +126,22 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     }
     @Test
     public void drawHorizontalLine(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 6 2".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("L 1 2 6 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|xxxxxx    |\n|          |\n ----------\n", outContent.toString() );
     }
      @Test
     public void drawHorizontalLineOutsideCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 11 2".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("L 1 2 11 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString());
@@ -149,11 +149,11 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
      @Test
     public void drawDiagonalLineAttempt(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 1 3 3".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("L 1 1 3 3".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString());
@@ -161,11 +161,11 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void negativeCoordsDrawLine(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l -2 1 2 2".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("L -2 1 2 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString() );
@@ -173,14 +173,14 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     }
     @Test
     public void drawOverlappingHorizontalLines(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 6 2".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("L 1 2 6 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        ByteArrayInputStream in3 = new ByteArrayInputStream("l 4 2 8 2".getBytes());
+        ByteArrayInputStream in3 = new ByteArrayInputStream("L 4 2 8 2".getBytes());
         System.setIn(in3);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n|          |\n|xxxxxx    |\n|          |\n ----------\n ----------\n|          |\n|xxxxxxxx  |\n|          |\n ----------\n", outContent.toString() );
@@ -189,14 +189,14 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawOverlappingVerticalLines(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l 2 1 2 2".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("L 2 1 2 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        ByteArrayInputStream in3 = new ByteArrayInputStream("l 2 2 2 3".getBytes());
+        ByteArrayInputStream in3 = new ByteArrayInputStream("L 2 2 2 3".getBytes());
         System.setIn(in3);
         mydrawing.getInput();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n| x        |\n ----------\n", outContent.toString() );
@@ -204,7 +204,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     }
     @Test
     public void drawRectangle(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -218,7 +218,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawRectangleOutsideCanvas(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
@@ -231,7 +231,7 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
     public void drawRectanglInvalidCoords(){
-        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
