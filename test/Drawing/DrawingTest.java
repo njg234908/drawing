@@ -144,20 +144,19 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 2 11 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        assertEquals("Invalid Command\n", outContent.toString());
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString());
     }
     
-    
     @Test
-    public void drawVerticalLine(){
+    public void negativeCoordsDrawLine(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
         System.setIn(in);
         MyDrawing mydrawing = new MyDrawing();
         mydrawing.getInput();
-        ByteArrayInputStream in2 = new ByteArrayInputStream("l 2 1 2 2".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l -2 1 2 2".getBytes());
         System.setIn(in2);
         mydrawing.getInput();
-        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\n ----------\n| x        |\n| x        |\n|          |\n ----------\n", outContent.toString() );
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString() );
         
     }
     @Test

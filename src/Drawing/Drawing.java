@@ -51,14 +51,14 @@ class MyDrawing{
        canvas = this.buildCanvas(splitinput,command);
        this.printCanvas();}
     
-    //valid draw line command
+    //draw line command
     else if(splitinput.length == 5){
     try{ int x1 = Integer.parseInt(splitinput[1]);
          int y1 = Integer.parseInt(splitinput[2]);
          int x2 = Integer.parseInt(splitinput[3]);
          int y2 = Integer.parseInt(splitinput[4]);
          
-         if (splitinput[0].equals("l")){
+         if (splitinput[0].equals("l") && (x1>0 && y1>0 && x2>0 && y2>0) && (x1 <=w && x2 <=w) && (y1 <=h && y2 <=h)){
          //vertical line
          if(x1==x2){
          drawVerticalLine(x1,y1, x2, y2);
@@ -80,6 +80,7 @@ class MyDrawing{
           this.printCanvas();
           
        }
+        else System.out.println("Invalid Command");
     }
     catch (Exception e){
        System.out.println("Invalid Command");}
