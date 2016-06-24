@@ -147,6 +147,18 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString());
     }
     
+     @Test
+    public void drawDiagonalLineAttempt(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("l 1 1 3 3".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString());
+    }
+    
     @Test
     public void negativeCoordsDrawLine(){
         ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
