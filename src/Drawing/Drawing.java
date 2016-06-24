@@ -58,7 +58,8 @@ class MyDrawing{
          int x2 = Integer.parseInt(splitinput[3]);
          int y2 = Integer.parseInt(splitinput[4]);
          
-         if (splitinput[0].equals("l") && (x1>0 && y1>0 && x2>0 && y2>0) && (x1 <=w && x2 <=w) && (y1 <=h && y2 <=h)){
+         if ((x1>0 && y1>0 && x2>0 && y2>0) && (x1 <=w && x2 <=w) && (y1 <=h && y2 <=h)){
+             if(splitinput[0].equals("l")){
          //vertical line
          if(x1==x2){
          drawVerticalLine(x1,y1, x2, y2);
@@ -81,6 +82,7 @@ class MyDrawing{
           
        }
         else System.out.println("Invalid Command");
+    }else System.out.println("Invalid Command");
     }
     catch (Exception e){
        System.out.println("Invalid Command");}

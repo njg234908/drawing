@@ -204,6 +204,32 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     }
     
+    @Test
+    public void drawRectangleOutsideCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("R 1 1 3 4".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString()); 
+    
+    }
+    
+    @Test
+    public void drawRectanglInvalidCoords(){
+        ByteArrayInputStream in = new ByteArrayInputStream("c 10 3".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        ByteArrayInputStream in2 = new ByteArrayInputStream("R r 1 -5 5".getBytes());
+        System.setIn(in2);
+        mydrawing.getInput();
+        assertEquals(" ----------\n|          |\n|          |\n|          |\n ----------\nInvalid Command\n", outContent.toString()); 
+    
+    }
+    
     
     /*
     @Test
