@@ -7,7 +7,6 @@
 package Drawing;
 import java.io.*;
 import java.util.*;
-import java.lang.*;
 /**
  *
  * @author nicholas.gould
@@ -60,28 +59,31 @@ class MyDrawing{
                 int y2 = Integer.parseInt(splitinput[4]);
          
                 if ((x1>0 && y1>0 && x2>0 && y2>0) && (x1 <=width && x2 <=width) && (y1 <=height && y2 <=height)){
-                    if(splitinput[0].equals("L")){
-                        //vertical line
-                        if(x1==x2){
-                            drawVerticalLine(x1,y1, x2, y2);
+                    switch (splitinput[0]) {
+                        case "L":
+                            //vertical line
+                            if(x1==x2){
+                                drawVerticalLine(x1,y1, x2, y2);
+                                this.printCanvas();
+                            }
+                            //horizontal line
+                            else if(y1==y2){
+                                drawHorizontalLine(x1,y1, x2, y2);
+                                this.printCanvas();
+                            }
+                            else this.invalidCommand();
+                            break;
+                        case "R":
+                            drawHorizontalLine(x1,y1,x2,y1);
+                            drawHorizontalLine(x1,y2,x2,y2);
+                            drawVerticalLine(x1,y1,x1,y2);
+                            drawVerticalLine(x2,y1,x2,y2);
                             this.printCanvas();
-                        }              
-                        //horizontal line
-                        else if(y1==y2){
-                            drawHorizontalLine(x1,y1, x2, y2);
-                            this.printCanvas();
-                        }
-                        else this.invalidCommand();
-                }
-                //rectangle
-                else if((splitinput[0].equals("R"))){
-                    drawHorizontalLine(x1,y1,x2,y1);
-                    drawHorizontalLine(x1,y2,x2,y2);
-                    drawVerticalLine(x1,y1,x1,y2);
-                    drawVerticalLine(x2,y1,x2,y2);
-                    this.printCanvas();          
-                }
-                else this.invalidCommand();
+                            break;
+                        default:
+                            this.invalidCommand();
+                            break;
+                    }
                 }
             else this.invalidCommand();
             }
@@ -107,22 +109,23 @@ class MyDrawing{
     
     //build a canvas to specified dimensions
     List<String> buildCanvas(String[] splitinput, Scanner command){
-        List<String> canvas = new ArrayList<>();
+        List<String> canvasbuild;
+        canvasbuild = new ArrayList<>();
         width = Integer.parseInt(splitinput[1]);
         height = Integer.parseInt(splitinput[2]);
-        String top = new String(" ");
-        String side = new String("|");
+        String top = " ";
+        String side = "|";
         for(int i = 0; i < width ;i++){
             top = top+"-";
             side = side+" ";
         }
         side = side+"|";
-        canvas.add(top);
+        canvasbuild.add(top);
         for(int i = 0; i < height ;i++){
-            canvas.add(side);
+            canvasbuild.add(side);
         }
-        canvas.add(top);
-        return canvas;
+        canvasbuild.add(top);
+        return canvasbuild;
     }
     
     //print the canvas

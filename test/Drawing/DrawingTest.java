@@ -125,6 +125,15 @@ private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
         assertEquals(" --\n|  |\n|  |\n|  |\n|  |\n --\n", outContent.toString() );
     }
     @Test
+    public void drawInvalidCanvas(){
+        ByteArrayInputStream in = new ByteArrayInputStream("C -2 4".getBytes());
+        System.setIn(in);
+        MyDrawing mydrawing = new MyDrawing();
+        mydrawing.getInput();
+        assertEquals("Invalid Command\n", outContent.toString() );
+    }
+    
+    @Test
     public void drawHorizontalLine(){
         ByteArrayInputStream in = new ByteArrayInputStream("C 10 3".getBytes());
         System.setIn(in);
